@@ -15,6 +15,11 @@ export default defineComponent({
     horas: { type: Array }
 
   },
+  watch: {
+    horas () {
+      this.$data._chart.update()
+    }
+  },
   mounted () {
     this.renderChart({
       labels: this.horas,
